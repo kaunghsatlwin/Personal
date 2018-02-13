@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Blog.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyPortfolio</a> &gt; <a href="index.source.html" class="el_package">com.portfolio.model</a> &gt; <span class="el_source">Blog.java</span></div><h1>Blog.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.portfolio.model;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+/**
+ *
+ * @author Lenovo
+ */
+@Entity
+@Table(name = &quot;Blog&quot;, catalog = &quot;public&quot;)
+public class Blog implements Serializable {
+
+    private static final long serialVersionUID = 5L;
+
+    @Id
+    @Column(name = &quot;blg_id&quot;, unique = true, nullable = false)
+    private int blg_id;
+    @Column(name = &quot;blg_title&quot;, unique = false, nullable = false)
+    private String blg_title;
+    @Column(name = &quot;blg_bdy&quot;, unique = false, nullable = false)
+    private String blg_bdy;
+    @Column(name = &quot;blg_crtdate&quot;, unique = false, nullable = false)
+    private Date blg_crtdate;
+    @Column(name = &quot;blg_mdydate&quot;, unique = false, nullable = true)
+    private Date blg_mdydate;
+    @Column(name = &quot;blg_img&quot;, unique = false, nullable = true)
+    private byte[] blg_img;
+//One Blog may have many comments,
+//Table is related auto and
+//if parent type is remove, child is auto remove
+<span class="fc" id="L45">    @OneToMany(cascade = CascadeType.ALL,</span>
+            orphanRemoval = true
+    )
+    private List&lt;Comment&gt; comments = new ArrayList&lt;&gt;();
+    @Column(name = &quot;blg_status&quot;, unique = false, nullable = false)
+    private int blg_status;
+    @Column(name = &quot;blg_review&quot;, unique = false, nullable = false)
+    private int blg_review;
+
+<span class="fc" id="L54">    public Blog() {</span>
+        //throw new UnsupportedOperationException(&quot;Not supported yet.&quot;); //To change body of generated methods, choose Tools | Templates.
+<span class="fc" id="L56">    }</span>
+
+    public int getBlg_id() {
+<span class="fc" id="L59">        return blg_id;</span>
+    }
+
+    public List&lt;Comment&gt; getComments() {
+<span class="nc" id="L63">        return comments;</span>
+    }
+
+    public void setComments(List&lt;Comment&gt; comments) {
+<span class="nc" id="L67">        this.comments = comments;</span>
+<span class="nc" id="L68">    }</span>
+
+    public void setBlg_id(int blg_id) {
+<span class="nc" id="L71">        this.blg_id = blg_id;</span>
+<span class="nc" id="L72">    }</span>
+
+    public String getBlg_title() {
+<span class="fc" id="L75">        return blg_title;</span>
+    }
+
+    public void setBlg_title(String blg_title) {
+<span class="nc" id="L79">        this.blg_title = blg_title;</span>
+<span class="nc" id="L80">    }</span>
+
+    public String getBlg_bdy() {
+<span class="nc" id="L83">        return blg_bdy;</span>
+    }
+
+    public void setBlg_bdy(String blg_bdy) {
+<span class="nc" id="L87">        this.blg_bdy = blg_bdy;</span>
+<span class="nc" id="L88">    }</span>
+
+    public Date getBlg_crtdate() {
+<span class="nc" id="L91">        return blg_crtdate;</span>
+    }
+
+    public void setBlg_crtdate(Date blg_crtdate) {
+<span class="nc" id="L95">        this.blg_crtdate = blg_crtdate;</span>
+<span class="nc" id="L96">    }</span>
+
+    public Date getBlg_mdydate() {
+<span class="nc" id="L99">        return blg_mdydate;</span>
+    }
+
+    public void setBlg_mdydate(Date blg_mdydate) {
+<span class="nc" id="L103">        this.blg_mdydate = blg_mdydate;</span>
+<span class="nc" id="L104">    }</span>
+
+    public byte[] getBlg_img() {
+<span class="nc" id="L107">        return blg_img;</span>
+    }
+
+    public void setBlg_img(byte[] blg_img) {
+<span class="nc" id="L111">        this.blg_img = blg_img;</span>
+<span class="nc" id="L112">    }</span>
+
+    public int getBlg_status() {
+<span class="nc" id="L115">        return blg_status;</span>
+    }
+
+    public void setBlg_status(int blg_status) {
+<span class="nc" id="L119">        this.blg_status = blg_status;</span>
+<span class="nc" id="L120">    }</span>
+
+    public int getBlg_review() {
+<span class="nc" id="L123">        return blg_review;</span>
+    }
+
+    public void setBlg_review(int blg_review) {
+<span class="nc" id="L127">        this.blg_review = blg_review;</span>
+<span class="nc" id="L128">    }</span>
+
+<span class="fc" id="L130">    public Blog(int blg_id, String blg_title, String blg_bdy, Date blg_crtdate, Date blg_mdydate, byte[] blg_img, int blg_status, int blg_review) {</span>
+<span class="fc" id="L131">        this.blg_id = blg_id;</span>
+<span class="fc" id="L132">        this.blg_title = blg_title;</span>
+<span class="fc" id="L133">        this.blg_bdy = blg_bdy;</span>
+<span class="fc" id="L134">        this.blg_crtdate = blg_crtdate;</span>
+<span class="fc" id="L135">        this.blg_mdydate = blg_mdydate;</span>
+<span class="fc" id="L136">        this.blg_img = blg_img;</span>
+<span class="fc" id="L137">        this.blg_status = blg_status;</span>
+<span class="fc" id="L138">        this.blg_review = blg_review;</span>
+<span class="fc" id="L139">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L143">        return &quot;Blog : &quot; + this.blg_title + &quot; is created in &quot; + this.blg_crtdate;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

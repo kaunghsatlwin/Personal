@@ -1,0 +1,8 @@
+com\portfolio\controller\BlogController.class
+com\portfolio\model\Person.class
+com\portfolio\service\impl\BlogServiceImpl.class
+com\portfolio\model\Comment.class
+com\portfolio\model\Blog.class
+com\portfolio\service\BlogService.class
+com\portfolio\repository\BlogRepository.class
+com\protfolio\utils\Util.class

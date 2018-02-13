@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <h:outputStylesheet  library = "css" name = "style.css"  />
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <h:form enctype="multipart/form-data" >
+                <p:growl id="growl" life="2000" />
+                <p:layout fullPage="true">
+                    <p:layoutUnit style="min-height:30px;right:10%;margin-right:-10px;width:200px;position: relative;" position="north" size="80" resizable="true" closable="true" collapsible="true">
+                        <ui:insert name="footer">
+                            <ui:include  src="/WEB-INF/view/header.xhtml"></ui:include>
+                        </ui:insert>
+                    </p:layoutUnit>
+
+                    <p:layoutUnit position="center">
+                        <p:panelGrid columns="8">
+                            <f:facet name="header"></f:facet>
+                            <p:row></p:row>
+                            <p:row></p:row>
+                            <p:row></p:row>
+                            <p:row></p:row>
+                            <p:row>
+                                <p:panelGrid columns="1">
+                                    <p:row>
+                                        <p:column>
+                                            <p:outputLabel value="Title"></p:outputLabel>
+                                        </p:column>
+                                        <p:column>
+                                            <p:inputText value="#{blogController.blog.blg_title}"></p:inputText><br></br>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <p:outputLabel value="Body"></p:outputLabel>
+                                        </p:column>
+                                        <p:column>
+                                            <p:inputText value="#{blogController.blog.blg_bdy}" ></p:inputText><br></br>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <p:outputLabel value="Photo"></p:outputLabel>
+                                        </p:column>
+                                        <p:column>
+                                            <p:inputText value="#{blogController.blog.blg_img}" ></p:inputText>
+                                            <!--                                    <p:commandButton onclick="PF('dlg').show()" value="open"></p:commandButton><br></br>
+                                                                                <p:dialog widgetVar="dlg">
+                                                                                    <p:growl id="messages" showDetail="true" />
+                                                                                    <p:fileUpload value="#{blogController.blog.blg_img}" mode="simple" />
+                                                                                </p:dialog>-->
+                                        </p:column>
+                                        <p:column>
+                                            <p:commandButton  ajax="false"  value="Send"   actionListener="#{blogController.addBlog}"></p:commandButton>
+                                        </p:column>
+                                    </p:row>
+                                </p:panelGrid>
+                            </p:row>
+                            <p:row></p:row>
+                            <p:row></p:row>
+                            <p:row></p:row>
+                        </p:panelGrid>
+                    </p:layoutUnit>
+
+                    <p:layoutUnit position="south" size="80" closable="true" collapsible="true">
+                        <ui:insert name="footer">
+                            <ui:include  src="/WEB-INF/view/footer.xhtml"></ui:include>
+                        </ui:insert>
+                    </p:layoutUnit>
+                </p:layout>
+            </h:form>
+        </h:body>
+    </f:view>
+</ui:composition>

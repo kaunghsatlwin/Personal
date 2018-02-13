@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+MyPortfolio,com.portfolio.controller,BlogController,74,9,2,0,12,3,5,2,4,2
+MyPortfolio,com.protfolio.utils,Util,47,0,2,0,11,0,3,0,2,0
+MyPortfolio,com.portfolio.model,Blog,72,46,0,0,26,15,17,4,17,4
+MyPortfolio,com.portfolio.model,Comment,65,0,0,0,21,0,14,0,14,0
+MyPortfolio,com.portfolio.model,Person,102,0,0,0,38,0,26,0,26,0
+MyPortfolio,com.portfolio.service.impl,BlogServiceImpl,0,7,0,0,0,2,0,2,0,2

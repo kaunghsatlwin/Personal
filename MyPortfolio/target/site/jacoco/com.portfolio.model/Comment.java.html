@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Comment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MyPortfolio</a> &gt; <a href="index.source.html" class="el_package">com.portfolio.model</a> &gt; <span class="el_source">Comment.java</span></div><h1>Comment.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.portfolio.model;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+/**
+ *
+ * @author Lenovo
+ */
+@Entity
+@Table(name = &quot;Comment&quot;, catalog = &quot;public&quot;)
+<span class="nc" id="L25">public class Comment implements Serializable {</span>
+
+    private static final long serialVersionUID = 5L;
+
+    @Id
+    @Column(name = &quot;cmt_id&quot;, unique = true, nullable = false)
+    private int cmt_id;
+<span class="nc" id="L32">    @OneToMany(</span>
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List&lt;Person&gt; person = new ArrayList&lt;&gt;();
+
+    @Column(name = &quot;cmt_bdy&quot;, nullable = false)
+    private String cmt_bdy;
+    @Column(name = &quot;cmt_crtdate&quot;, nullable = false)
+    private Date cmt_crtdate;
+    @Column(name = &quot;cmt_mdydate&quot;, nullable = true)
+    private Date cmt_mdydate;
+    @Column(name = &quot;cmt_status&quot;, nullable = false)
+    private int cmt_status;
+
+    public List&lt;Person&gt; getPerson() {
+<span class="nc" id="L48">        return person;</span>
+    }
+
+    public void setPerson(List&lt;Person&gt; person) {
+<span class="nc" id="L52">        this.person = person;</span>
+<span class="nc" id="L53">    }</span>
+
+    public String getCmt_bdy() {
+<span class="nc" id="L56">        return cmt_bdy;</span>
+    }
+
+    public void setCmt_bdy(String cmt_bdy) {
+<span class="nc" id="L60">        this.cmt_bdy = cmt_bdy;</span>
+<span class="nc" id="L61">    }</span>
+
+    public Date getCmt_crtdate() {
+<span class="nc" id="L64">        return cmt_crtdate;</span>
+    }
+
+    public void setCmt_crtdate(Date cmt_crtdate) {
+<span class="nc" id="L68">        this.cmt_crtdate = cmt_crtdate;</span>
+<span class="nc" id="L69">    }</span>
+
+    public Date getCmt_mdydate() {
+<span class="nc" id="L72">        return cmt_mdydate;</span>
+    }
+
+    public void setCmt_mdydate(Date cmt_mdydate) {
+<span class="nc" id="L76">        this.cmt_mdydate = cmt_mdydate;</span>
+<span class="nc" id="L77">    }</span>
+
+    public int getCmt_status() {
+<span class="nc" id="L80">        return cmt_status;</span>
+    }
+
+    public void setCmt_status(int cmt_status) {
+<span class="nc" id="L84">        this.cmt_status = cmt_status;</span>
+<span class="nc" id="L85">    }</span>
+
+    public int getCmt_id() {
+<span class="nc" id="L88">        return cmt_id;</span>
+    }
+
+    public void setCmt_id(int cmt_id) {
+<span class="nc" id="L92">        this.cmt_id = cmt_id;</span>
+<span class="nc" id="L93">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L97">        return &quot;Comment : &quot; + this.cmt_id + &quot; is created in &quot; + this.cmt_crtdate;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

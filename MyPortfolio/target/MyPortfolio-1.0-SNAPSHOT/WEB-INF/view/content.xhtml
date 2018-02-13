@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:jr="http://jasperreportjsf.sf.net/tld/jasperreports-jsf-1_2.tld"
+                xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <h:outputStylesheet  library = "css" name = "style.css"  />
+    <h:outputStylesheet name="grid/grid.css" library="primefaces" />
+</head>
+<h:body>
+    <h3>Welcome to my Portfolio!</h3>
+    <p:layout fullPage="true">
+        <div class="ui-grid-12 ">
+            <div class="ui-grid-12">
+                2018/02/13
+            </div>
+            <div class="ui-grid-12 ">
+                <div class="ui-grid">
+                    <div class="ui-grid-12 ui-md-4">
+                        Java Web Developer.
+                    </div>
+                </div>
+
+                <div class="ui-grid">
+                    <div class="ui-grid-6 "><p:graphicImage name="images/6.jpg" style="width:30%"/>&nbsp; &nbsp;<p:graphicImage name="images/6.jpg" style="width:30%"/></div>
+                </div>
+
+                <div class="ui-grid">
+                    <div class="ui-grid-12 ">Thank you!</div>
+                </div>
+            </div>
+        </div>
+    </p:layout>
+</h:body>
+</ui:composition>
