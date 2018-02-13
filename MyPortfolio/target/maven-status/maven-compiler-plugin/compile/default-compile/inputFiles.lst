@@ -1,8 +1,8 @@
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\model\Comment.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\protfolio\utils\Util.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\model\Blog.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\service\impl\BlogServiceImpl.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\service\BlogService.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\model\Person.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\repository\BlogRepository.java
-D:\NetBeansProjects\Personal\MyPortfolio\src\main\java\com\portfolio\controller\BlogController.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\service\impl\BlogServiceImpl.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\repository\BlogRepository.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\model\Person.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\controller\BlogController.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\model\Comment.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\protfolio\utils\Util.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\model\Blog.java
+D:\NetBeansProjects\MyPortfolio\src\main\java\com\portfolio\service\BlogService.java
