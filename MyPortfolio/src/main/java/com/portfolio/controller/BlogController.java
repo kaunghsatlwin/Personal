@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * 
+=======
+ * copyright (c) 2018. All rights reserved.
+>>>>>>> b5268f5388a1eb68f78df3d2199c47697a83eb65
  */
 package com.portfolio.controller;
 
